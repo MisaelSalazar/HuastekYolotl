@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../public/fontawesome-free-6.5.1-web/all.css">
+
+    <link rel="stylesheet" href="../css/bottomNavBar.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/topAppMenu.css">
+    <link rel="stylesheet" href="../css/img.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+
+    <style>
+          
+          .pinterest-gallery {
+            column-count: 4;
+            column-gap: 10px;
+            padding: 10px;
+            align-items: center;
+          }
+          
+          .gallery-item {
+            position: relative;
+            background-color: white;
+            margin-bottom: 10px;
+            break-inside: avoid;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 49%;
+            display: inline-block;
+            box-sizing: border-box;
+          }
+          
+          .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+          }
+          
+          .gallery-item.expanded {
+            position: relative;
+            z-index: 10;
+            transform: scale(1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+          }
+          
+          .gallery-item .info {
+            display: none;
+            padding: 10px;
+          }
+          
+          .gallery-item.expanded .info {
+            display: block;
+            background-color: rgba(255, 255, 255, 0.9);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+          }
+          
+          /* Ajustes responsivos */
+          @media (max-width: 1200px) {
+            .pinterest-gallery {
+              column-count: 3;
+            }
+          }
+          
+          @media (max-width: 768px) {
+            .pinterest-gallery {
+              column-count: 2;
+            }
+          }
+          
+          @media (max-width: 480px) {
+            .pinterest-gallery {
+              column-count: 1;
+            }
+          }
+          
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+        
+        <script>
+            let visible = false;
+            let titulo = "Cultura a través de imágenes";
+        </script>
+
+        <script src="../components/AppMenu.js"></script>
+        
+        <!-- <img id="informacion" src="../img/informacion.webp"> -->
+    </header>
+
+    
+    <script src="../public/fontawesome-free-6.5.1-web/all.js"></script>
+
+    <main>
+
+      <div class="pinterest-gallery">
+        <div class="gallery-item" onclick="expandImage(this)">
+          <img src="../img/galeria/tradicionesTenek.jpg" alt="Imagen 1">
+          <div class="info">
+            <h2>Imagen 1</h2>
+            <p>Ritual Tének</p>
+          </div>
+        </div>
+
+          <div class="gallery-item" onclick="expandImage(this)">
+            <img src="../img/galeria/Imagen16.jpg" alt="Imagen 1">
+            <div class="info">
+              <h2>Imagen 2</h2>
+              <p>Ritual Tének</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="expandImage(this)">
+            <img src="../img/galeria/IMG-20211108-WA0098.jpg" alt="Imagen 2">
+            <div class="info">
+              <h2>Imagen 3</h2>
+              <p>Xantolo Ébano SLP</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="expandImage(this)">
+            <img src="../img/galeria/OIP.jpeg" alt="Imagen 3">
+            <div class="info">
+              <h2>Imagen 4</h2>
+              <p>Comparsas Tradicionales</p>
+          </div>
+      </div>
+        
+    </main>
+
+    <script>
+        function expandImage(element) {
+            // Remover la clase 'expanded' de todas las imágenes
+            var items = document.getElementsByClassName('gallery-item');
+            for (var i = 0; i < items.length; i++) {
+              items[i].classList.remove('expanded');
+            }
+            
+            // Agregar la clase 'expanded' al elemento seleccionado
+            element.classList.add('expanded');
+          }
+          
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "com.example.hustekapp",
+  "displayName": "HustekApp",
+  "version": "1.0.0",
+  "description": "Una aplicacion para enseñar lenguas indigenas de la huasteca",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Angel Misael Salazar Reyes",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "cordova-android": "^13.0.0"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  }
+}
